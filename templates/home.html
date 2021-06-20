@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="google-site-verification" content="iSBX_dueEl1VO9SoQxekCleL3U5mlU8-FTRfgc14xGg" />
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/icons-mega-pack-1-and-2/256/Any_DVD_Converter.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMG 2 PDF Converter - (JPG, PNG, DOCs, PPT, XLs to PDF)</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="/static/Static Upload Files/script.js"></script>
+    <!-- hide show -->
+    <script type="text/javascript">
+
+        function toggle_visibility(id) {
+            var e = document.getElementById(id);
+            if (e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+    </script>
+    <style>
+        .drop_box {
+            cursor: crosshair;
+            background-color: rgb(0, 0, 0);
+            padding: 100px 250px 100px 250px;
+            border-style: dotted solid double dashed;
+            border-color: aqua;
+            border-radius: 50px;
+        }
+
+        .drop_box:hover {
+            background-color: rgb(70, 69, 69);
+            color: black;
+        }
+
+        .Mobile_dropbox1 {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .Mobile_dropbox2 {
+            text-align: center;
+            width: 90%;
+
+        }
+
+        .Mobile_dropbox3 {
+            max-width: -webkit-fill-available;
+            text-align: center;
+            padding: 100px 0px 100px 0px;
+            margin: 10px 10px;
+        }
+    </style>
+    <style>
+        @media (max-width: 1054px) {
+            .Laptop {
+                display: none;
+            }
+
+            html,
+            body {
+                font-family: 'Raleway', sans-serif;
+                padding: 2.5em 1em 0.5em 1em;
+                font-size: 18px;
+                background: rgb(0, 0, 0);
+                color: rgb(255, 255, 255)
+            }
+
+            h1 {
+                font-weight: 400;
+                margin: 1.5em 0;
+                display: flex;
+                justify-content: center;
+                font-size: 4em;
+            }
+        }
+
+
+        @media (min-width: 1054px) {
+            .Mobile {
+
+                display: none;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Laptop">
+
+
+        <section>
+
+            <h1 class="letters" style="font-size: 6em; font-family: Atma; margin: 0.9em;">
+                <span class="txt-rotate" data-period="1000"
+                    data-rotate='["JPG 2 PDF", "PDF 2 JPG ","PNG 2 JPG","PDF MERGE","DOCS 2 PDF","PPT 2 PDF","XLs 2 PDF","WATERMARK REMOVER" ]'></span>
+            </h1>
+        </section>
+        <section style="padding-top: 70px;" id="TAB_BAR">
+            <div class="tab">
+                <a href="#TAB_BAR">
+                    <button class="tablinks" onclick="openCity(event, 'Single Jpg 2 Pdf')"> Single JPG 2
+                        PDF</button>
+                    <button class="tablinks" onclick="openCity(event, 'Multiples Jpg 2 Pdf')"> Multiples JPG 2
+                        PDF</button>
+                    <button class="tablinks" onclick="openCity(event, 'Single Png 2 Pdf')"> Single PNG 2 PDF</button>
+                    <button class="tablinks" onclick="openCity(event, 'Multiple Png 2 Pdf')"> Multiple PNG 2
+                        PDF</button>
+                    <button class="tablinks" onclick="openCity(event, 'Pdf Merger')"> PDF Merger</button>
+                    <button class="tablinks" onclick="openCity(event, 'Water mark remover')"> Water mark
+                        remover</button>
+                    <button class="tablinks" onclick="openCity(event, 'docs 2 Pdf')"> docs 2 PDF</button>
+                    <button class="tablinks" onclick="openCity(event, 'PPt 2 Pdf')"> PPt 2 PDF</button>
+                    <button class="tablinks" onclick="openCity(event, 'xls 2 Pdf')"> xls 2 PDF</button></a>
+            </div>
+
+            <!-- Tab content -->
+            <div id="Single Jpg 2 Pdf" class="tabcontent">
+                <h2>Single JPG 2 PDF</h2>
+                <p>Converts Single JPG Image to PDF.(Maximum file size - 5MB)</p>
+                <form method="post" action="/Img2Pdf" enctype="multipart/form-data">
+                    <div>
+                        <input class="drop_box" type="file" name="img" accept=".jpg">
+                    </div>
+                    <input onclick="change()" id="DOWNLOAD_BTN" type="submit" class="Redirect_Btn" value="Download PDF">
+                </form>
+
+                <!-- <button class="Redirect_Btn">Demo</button> -->
+            </div>
+            <div id="Multiples Jpg 2 Pdf" class="tabcontent">
+                <h2>Multiples JPG 2 PDF</h2>
+                <p>Converts Multiple JPG Image to PDF.(Maximum file size - 5MB)</p>
+                <form method="post" action="/Img2Pdf_merger" enctype="multipart/form-data">
+
+                    <div>
+                        <input class="drop_box" type="file" name="file" accept=".jpg" multiple>
+                    </div>
+                    <input onclick="change()" id="DOWNLOAD_BTN" type="submit" class="Redirect_Btn" value="Download PDF">
+                </form>
+                <!-- <button class="Redirect_Btn">Demo</button> -->
+            </div>
+            <div id="Single Png 2 Pdf" class="tabcontent">
+                <h2>Single PNG 2 PDF</h2>
+                <p>Converts Single PNG Image to PDF.(Maximum file size - 5MB)</p>
+                <form method="post" action="/Img2Pdf" enctype="multipart/form-data">
+                    <div>
+                        <input class="drop_box" type="file" name="img" accept=".jpg">
+                    </div>
+                    <input onclick="change()" id="DOWNLOAD_BTN" type="submit" class="Redirect_Btn" value="Download PDF">
+                </form>
+
+                <!-- <button style="cursor: not-allowed;" class="Redirect_Btn">Demo</button> -->
+            </div>
+            <div id="Multiple Png 2 Pdf" class="tabcontent">
+                <h2>Multiple PNG 2 PDF</h2>
+                <p>Converts Multiple PNG Image to PDF.(Maximum file size - 5MB)</p>
+                <form method="post" action="/Img2Pdf_merger" enctype="multipart/form-data">
+
+                    <div>
+                        <input class="drop_box" type="file" name="file" accept=".jpg" multiple>
+                    </div>
+                    <input onclick="change()" id="DOWNLOAD_BTN" type="submit" class="Redirect_Btn" value="Download PDF">
+                </form>
+
+                <!-- <button style="cursor: not-allowed;" class="Redirect_Btn">Demo</button> -->
+            </div>
+            <div id="Pdf Merger" class="tabcontent">
+                <h2>PDF Merger</h2>
+                <p>Merge PDFs to New PDF.(Maximum file size - 15MB)</p>
+                <form method="post" action="/PDF_merge" enctype="multipart/form-data">
+
+                    <div>
+                        <input class="drop_box" type="file" name="file" accept=".pdf" multiple>
+                    </div>
+                    <input onclick="change()" id="DOWNLOAD_BTN" type="submit" class="Redirect_Btn" value="Download Merge PDF">
+                </form>
+                <!-- <button class="Redirect_Btn">Demo</button> -->
+            </div>
+            <div id="Water mark remover" class="tabcontent">
+                <h2>Water mark remover (RemoveCam Scanner water Mark)</h2>
+                <p>Remove Watermark from PDF.(Maximum file size - 5MB)</p>
+                <form method="post" action="/watermark_Remover" enctype="multipart/form-data">
+
+                    <div>
+                        <input class="drop_box" type="file" name=file accept="application/pdf">
+                    </div>
+                    <input onclick="change()" id="DOWNLOAD_BTN" type="submit" class="Redirect_Btn" value="Download PDF">
+                </form>
+                
+                <!-- <button class="Redirect_Btn">Demo</button> -->
+            </div>
+            <div id="docs 2 Pdf" class="tabcontent">
+                <h2 >DOCS 2 PDF</h2>
+                <p>Converts DOCs file to PDF.(Maximum file size - 5MB)</p>
+                <button style="cursor: not-allowed;" class="Redirect_Btn">Comming Soon </button>
+                <!-- <form method="post" action="/DOC2PDF" enctype="multipart/form-data">
+    
+                    <div>
+                        <input class="drop_box" type="file" name=file accept=".docx">
+                    </div>
+                    <input onclick="change()" id="DOWNLOAD_BTN" type="submit" class="Redirect_Btn" value="Download PDF">
+                </form> -->
+            </div>
+            <div id="PPt 2 Pdf" class="tabcontent">
+                <h2 style="cursor: not-allowed;">PPT 2 PDF</h2>
+                <p style="cursor: not-allowed;">Converts Presentation file to PDF.(Maximum file size - 5MB)</p>
+                <button style="cursor: not-allowed;" class="Redirect_Btn">Comming Soon </button>
+                <!-- <button style="cursor: not-allowed;" class="Redirect_Btn">Demo</button> -->
+            </div>
+            <div id="xls 2 Pdf" class="tabcontent">
+                <h2 style="cursor: not-allowed;">XLs 2 PDF</h2>
+                <p style="cursor: not-allowed;">Converts Excels file to PDF.(Maximum file size - 5MB)</p>
+                <button style="cursor: not-allowed;" class="Redirect_Btn">Comming Soon </button>
+                <!-- <button style="cursor: not-allowed;" class="Redirect_Btn">Demo</button> -->
+            </div>
+
+        </section>
+        <section style="display: flex; width: 100%; padding-top: 70px;">
+            <div style="text-align: center; width: 100%; padding:0px 30px;">
+                <h2>Fast and easy</h2>
+                <p style="font-weight: 100;">Just Upload your files on the page, click "Download"
+                    button. Wait a little to
+                    complete Download.</p>
+            </div>
+            <div style="text-align: center; width: 100%; padding:0px 30px;">
+                <h2>0% compression</h2>
+                <p style="font-weight: 100;">100% no compression in files,Same size of file converted no change in file
+                    quality.</p>
+            </div>
+            <div style="text-align: center; width: 100%; padding:0px 30px;">
+                <h2>In the cloud</h2>
+                <p style="font-weight: 100;">All conversions take place in the cloud and will not consume any capacity
+                    from
+                    your computer.</p>
+            </div>
+            <div style="text-align: center; width: 100%; padding:0px 30px;">
+                <h2>Security guaranteed</h2>
+                <p style="font-weight: 100;"> We delete uploaded files instantly. No
+                    one
+                    has access to your files and
+                    privacy is 100% guaranteed..</p>
+            </div>
+
+        </section>
+
+        <!-- <section style="font-size: 3.3em; font-family: Comfortaa; padding-top: 100px;  text-align: center;">
+        <div class="demo">
+            <h1>Demo Videos</h1>
+
+        </div>
+    </section>
+    <section style=" background-color: white;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint tenetur, earum beatae dicta nam placeat nesciunt
+        corrupti voluptatibus ullam omnis perferendis iste, eaque, provident deserunt at. Voluptates sequi minus in.
+
+    </section> -->
+        <footer style="text-align: center; font-size: 30px;  padding-top: 50px;">
+            <div style="background-color: rgb(32, 32, 32); padding-top: 10px;"><a
+                    style=" color: white; text-decoration: none;" href="">Image
+                    Converter</a></div>
+            <div style="background-color: rgb(32, 32, 32); padding-top: 10px;"><a
+                    style=" color: white; text-decoration: none;" href="">PDF
+                    Converter</a></div>
+            <div style="background-color: rgb(32, 32, 32); padding-top: 10px;"><a
+                    style=" color: white; text-decoration: none;" href="">Document
+                    Converter</a></div>
+            <div style="background-color: rgb(32, 32, 32); padding-top: 10px;"><a
+                    style=" color: white; text-decoration: none;" href="">Presentation
+                    Converter</a></div>
+            <div style="background-color: rgb(32, 32, 32); padding-top: 10px;"><a
+                    style=" color: white; text-decoration: none;" href="">Excel sheet
+                    Converter</a></div>
+        </footer>
+        <div style=" font-size: 15px;margin-top: 35px; text-align: center;"><a
+                style="color: white; font-size: 20px; text-decoration: none; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+                href="https://www.linkedin.com/in/ayush-shete-74a331201/"  target="_blank">JPG 2 PDF </a>&#169; 2021 All rights reserved / Terms of Use / Privacy Policy / <a
+                href="https://www.linkedin.com/in/ayush-shete-74a331201/"  target="_blank"><strong><u> Profile</u></strong></a> </div>
+
+    </div>
+
+    <!-- 
+
+
+
+
+
+    MOBILE VIEW
+
+
+
+
+
+
+     -->
+    <div class="Mobile">
+
+        <section>
+
+            <h1 class="letters" style="font-size: 2.5em; font-family: Atma;">
+                <span class="txt-rotate" data-period="1000"
+                    data-rotate='["JPG 2 PDF", "PDF 2 JPG ","PNG 2 JPG","PDF MERGE","DOCS 2 PDF","PPT 2 PDF","XLs 2 PDF" ]'></span>
+            </h1>
+        </section>
+        <section style="padding-top: 150px; text-align: center;">
+            <h4>▶ Convert Files using Tools ◀</h4>
+            <div style="border: 2px solid white; margin: 40px 11px; border-radius: 18px;">
+                <div id="TAB1">
+
+                    <a href="#TAB1"><button onclick="toggle_visibility('jpg2pdf');"
+                            style="border-radius: 15px; width: 100%;">
+                            <p><b> JPG 2 PDF (Single)</b></p>
+                            <p
+                                style="border: 0; outline: 0; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px;">
+                                Converts Single JPG Image to PDF.</i></p>
+                        </button></a>
+                    <div id="jpg2pdf" style="display: none;">
+                        <form method="post" class="Mobile_dropbox1" action="/Img2Pdf" enctype="multipart/form-data">
+                            <div class="Mobile_dropbox2">
+                                <p>(Maximum file size - 5MB)</p>
+                                <input class="Mobile_dropbox3 drop_box" type="file" name="img" accept=".jpg">
+                                <input onclick="change()" id="DOWNLOAD_BTN" type="submit" class="Redirect_Btn" style="text-align: center;"
+                                    value="Download PDF">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div style="border: 2px solid white;  margin: 40px 11px; border-radius: 18px;">
+
+                <div id="TAB2">
+
+                    <a href="#TAB2"><button onclick="toggle_visibility('jpg2pdf_merge');"
+                            style="border-radius: 15px; width: 100%;">
+                            <p><b>JPG 2 PDF (Multiples)</b></p>
+                            <p
+                                style="border: 0; outline: 0; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px;">
+                                Converts Multiple JPG Image to PDF.</i></p>
+                        </button></a>
+                    <div id="jpg2pdf_merge" style="display: none;">
+                        <form method="post" class="Mobile_dropbox1" action="/Img2Pdf_merger"
+                            enctype="multipart/form-data">
+                            <div class="Mobile_dropbox2">
+                                <p>(Maximum file size - 5MB)</p>
+                                <input class="Mobile_dropbox3 drop_box" type="file" name="file" accept=".jpg" multiple>
+                                <input onclick="change()" id="DOWNLOAD_BTN" type="submit" class="Redirect_Btn" style="text-align: center;"
+                                    value="Download PDF">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div style="border: 2px solid white;  margin: 40px 11px; border-radius: 18px;">
+
+                <div id="TAB3">
+
+                    <a href="#TAB3"> <button onclick="toggle_visibility('png2pdf');"
+                            style="border-radius: 15px; width: 100%;">
+                            <p><b>PNG 2 PDF (Single)</b></p>
+                            <p
+                                style="border: 0; outline: 0; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px;">
+                                Converts Single PNG Image to PDF.</i></p>
+                        </button></a>
+                    <div id="png2pdf" style="display: none;">
+                        <form method="post" class="Mobile_dropbox1" action="/Img2Pdf" enctype="multipart/form-data">
+                            <div class="Mobile_dropbox2">
+                                <p>(Maximum file size - 5MB)</p>
+                                <input class="Mobile_dropbox3 drop_box" type="file" name="img" accept=".jpg">
+                                <input onclick="change()" id="DOWNLOAD_BTN" type="submit" class="Redirect_Btn" style="text-align: center;"
+                                    value="Download PDF">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div style="border: 2px solid white;  margin: 40px 11px; border-radius: 18px;">
+
+                <div id="TAB4">
+
+                    <a href="#TAB4"> <button onclick="toggle_visibility('png2pdf_merge');"
+                            style="border-radius: 15px; width: 100%;">
+                            <p><b>PNG 2 PDF (Multiples)</b></p>
+                            <p
+                                style="border: 0; outline: 0; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px;">
+                                Converts Multiples PNG Image to PDF.</i></p>
+                        </button></a>
+                    <div id="png2pdf_merge" style="display: none;">
+                        <form method="post" class="Mobile_dropbox1" action="/Img2Pdf_merger"
+                        enctype="multipart/form-data">
+                        <div class="Mobile_dropbox2">
+                            <p>(Maximum file size - 5MB)</p>
+                            <input class="Mobile_dropbox3 drop_box" type="file" name="file" accept=".jpg" multiple>
+                            <input onclick="change()" id="DOWNLOAD_BTN" type="submit" class="Redirect_Btn" style="text-align: center;"
+                                value="Download PDF">
+                        </div>
+                    </form>
+
+                    </div>
+                </div>
+            </div>
+            <div style="border: 2px solid white;  margin: 40px 11px; border-radius: 18px;">
+
+                <div id="TAB5">
+
+                    <a href="#TAB5"> <button onclick="toggle_visibility('pdf_merge');"
+                            style="border-radius: 15px; width: 100%;">
+                            <p><b>PDF Merger</b></p>
+                            <p
+                                style="border: 0; outline: 0; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px;">
+                                Merge PDFs to New PDF.</i></p>
+                        </button></a>
+                    <div id="pdf_merge" style="display: none;">
+                        <form method="post" class="Mobile_dropbox1" action="/PDF_merge" enctype="multipart/form-data">
+
+                            <div class="Mobile_dropbox2">
+                                <p>(Maximum file size - 15MB)</p>
+                                <input class="Mobile_dropbox3 drop_box" type="file" name="file" accept=".pdf" multiple>
+                                <input onclick="change()" id="DOWNLOAD_BTN" type="submit" style="text-align: center;" class="Redirect_Btn"
+                                    value="Download Merge PDF">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div style="border: 2px solid white;  margin: 40px 11px; border-radius: 18px;">
+
+                <div id="TAB6">
+
+                    <a href="#TAB6"> <button onclick="toggle_visibility('watermark_Remover');"
+                            style="border-radius: 15px; width: 100%;">
+                            <p><b>Water mark remover</b></p>
+                            <p
+                                style="border: 0; outline: 0; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px;">
+                                Remove Watermark from PDF.</i></p>
+                        </button></a>
+                    <div id="watermark_Remover" style="display: none;">
+                        <form method="post" class="Mobile_dropbox1" action="/watermark_Remover"
+                            enctype="multipart/form-data">
+
+                            <div class="Mobile_dropbox2">
+                                <p>(Maximum file size - 5MB)</p>
+                                <input class="Mobile_dropbox3 drop_box" type="file" name=file accept="application/pdf">
+                                <input onclick="change()" id="DOWNLOAD_BTN" type="submit" style="text-align: center;" class="Redirect_Btn"
+                                    value="Download PDF">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div style="border: 2px solid white;  margin: 40px 11px; border-radius: 18px;">
+
+                <div id="TAB7">
+
+                    <a href="#TAB7"> <button onclick="toggle_visibility('doc2pdf');"
+                            style="border-radius: 15px; width: 100%;">
+                            <p><b>DOCs 2 PDF</b></p>
+                            <p
+                                style="border: 0; outline: 0; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px;">
+                                Converts DOCs file to PDF.</i></p>
+                        </button></a>
+                    <div id="doc2pdf" style="display: none;">
+                        <form method="post" class="Mobile_dropbox1" action="/" enctype="multipart/form-data">
+
+                            <div class="Mobile_dropbox2">
+                                <p>(Maximum file size - 5MB)</p>
+
+                                <button style="cursor: not-allowed;" class="Redirect_Btn">Comming
+                                    Soon </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div style="border: 2px solid white;  margin: 40px 11px; border-radius: 18px;">
+
+                <div id="TAB8">
+
+                    <a href="#TAB8"> <button onclick="toggle_visibility('ppt2pdf');"
+                            style="border-radius: 15px; width: 100%;">
+                            <p><b>PPT 2 PDF</b></p>
+                            <p
+                                style="border: 0; outline: 0; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px;">
+                                Converts Presentation file to PDF.</i></p>
+                        </button></a>
+                    <div id="ppt2pdf" style="display: none;">
+                        <form method="post" class="Mobile_dropbox1" action="/" enctype="multipart/form-data">
+
+                            <div class="Mobile_dropbox2">
+                                <p>(Maximum file size - 5MB)</p>
+                                <button style="cursor: not-allowed;" class="Redirect_Btn">Comming Soon
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div style="border: 2px solid white;  margin: 40px 11px; border-radius: 18px;">
+
+                <div id="TAB9">
+
+                    <a href="#TAB9"> <button onclick="toggle_visibility('xls2pdf');"
+                            style="border-radius: 15px; width: 100%;">
+                            <p><b>XLs 2 PDF</b></p>
+                            <p
+                                style="border: 0; outline: 0; font-family: 'Open Sans Condensed', sans-serif; font-size: 20px;">
+                                Converts Excels file to PDF.</i></p>
+                        </button></a>
+                    <div id="xls2pdf" style="display: none">
+                        <form method="post" class="Mobile_dropbox1" action="/" enctype="multipart/form-data">
+
+                            <div class="Mobile_dropbox2">
+                                <p>(Maximum file size - 5MB)</p>
+                                <button style="cursor: not-allowed;" class="Redirect_Btn">Comming
+                                    Soon </button>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </section>
+        <section>
+            <div style="text-align: center; padding-top: 11px;">
+                <h3>Fast and easy</h3>
+                <p style="font-size: 15px;">Just Upload your files on the page, click "Convert"
+                    button. Wait a little for
+                    the process to complete. We aim to do all our conversions in under 1 minutes.</p>
+            </div>
+            <div style="text-align: center; padding-top: 11px;">
+                <h3>0% compression</h3>
+                <p style="font-size: 15px;">100% no compression in files,Same size of file converted no change in file
+                    quality.</p>
+            </div>
+            <div style="text-align: center; padding-top: 11px;">
+                <h3>In the cloud</h3>
+                <p style="font-size: 15px;">All conversions take place in the cloud and will not consume any capacity
+                    from
+                    your computer.</p>
+            </div>
+            <div style="text-align: center; padding-top: 11px; padding-bottom: 20px;">
+                <h3>Security guaranteed</h3>
+                <p style="font-size: 15px;"> We delete uploaded files instantly. No
+                    one
+                    has access to your files and
+                    privacy is 100% guaranteed..</p>
+            </div>
+
+        </section>
+        <section style="text-align: center; font-size: 15px;">
+            <h4>Image Converter</h4>
+            <h4>PDF Converter</h4>
+            <h4>Document Converter</h4>
+            <h4>Presentation Converter</h4>
+            <h4>Excel sheet Converter</h4>
+        </section>
+        <footer style="font-size: 11px; text-align: center;">
+            <a style="color: white; font-size: 15px; text-decoration: none; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+                href="https://www.linkedin.com/in/ayush-shete-74a331201/">JPG 2 PDF </a>&#169; 2021 All rights reserved / Terms of Use / Privacy Policy / <a
+                href="https://www.linkedin.com/in/ayush-shete-74a331201/"><strong><u> Profile</u></strong>
+        </footer>
+    </div>
+    <script>
+        function _(el) {
+            return document.getElementById(el);
+        }
+
+        function uploadFile() {
+            var file = _("file1").files[0];
+
+            // alert(file.name+" | "+file.size+" | "+file.type);
+            var formdata = new FormData();
+            formdata.append("file1", file);
+
+            var ajax = new XMLHttpRequest();
+            ajax.upload.addEventListener("progress", progressHandler, false);
+            ajax.addEventListener("load", completeHandler, false);
+            ajax.addEventListener("error", errorHandler, false);
+            ajax.addEventListener("abort", abortHandler, false);
+            ajax.open("POST", "file_upload_parser.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+            //use file_upload_parser.php from above url
+            ajax.send(formdata);
+        }
+
+        function progressHandler(event) {
+            _("loaded_n_total").innerHTML = "Uploaded " + event.loaded + " bytes of " + event.total;
+            var percent = (event.loaded / event.total) * 100;
+            _("progressBar").value = Math.round(percent);
+            _("status").innerHTML = Math.round(percent) + "% uploaded... please wait";
+        }
+
+        function completeHandler(event) {
+            _("status").innerHTML = event.target.responseText;
+            _("progressBar").value = 0; //wil clear progress bar after successful upload
+        }
+
+        function errorHandler(event) {
+            _("status").innerHTML = "Upload Failed";
+        }
+
+        function abortHandler(event) {
+            _("status").innerHTML = "Upload Aborted";
+        }
+    </script>
+    <script>
+        function change() // no ';' here
+        {
+            var elem = document.getElementById("DOWNLOAD_BTN");
+            if (elem.value == "Downloading...") elem.value = "Download PDF";
+            else elem.value = "Downloading...";
+        }
+    </script>
+</body>
+
+</html>
