@@ -10,8 +10,8 @@ This webapp created on Flask which can convert image into PDF and multiple pdfs 
 - img2pdf(`pip install img2pdf`)
 - and more(`follow requirement.text`)
      <br> `atomicwrites==1.4.0
-     <br> attrs==20.3.0
-     <br> bleach==3.3.0
+      attrs==20.3.0
+      bleach==3.3.0
       certifi==2020.12.5
       chardet==4.0.0
       click==7.1.2
